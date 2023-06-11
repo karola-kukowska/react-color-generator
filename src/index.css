@@ -66,8 +66,7 @@ html {
 
 body {
   background: var(--backgroundColor);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: Helvetica, Verdana, sans-serif;
   font-weight: 400;
   line-height: 1;
   color: var(--textColor);
@@ -254,6 +253,45 @@ ul {
 }
 /* ============= PROJECT CSS =============== */
 
+.color-title {
+  text-align: left;
+  padding-top: 2rem;
+  padding-left: 2rem;
+  font-family: Helvetica, sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    /* #feff86 0%,
+    #b0daff 29%,
+    #19a7ce 67%,
+    #146c94 100% */ #2cd3e1 0%,
+    #a459d1 29%,
+    #f266ab 67%,
+    #ffb84c 100%
+      /* #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100% */
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 6s linear infinite;
+  display: inline-block;
+  font-size: 45px;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
 .container {
   padding: 2rem;
   display: grid;
@@ -263,15 +301,17 @@ ul {
 
 .color-form {
   display: flex;
+  height: 60px;
 }
-input[type='text'] {
+input[type="text"] {
   border-color: transparent;
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
   max-width: 200px;
 }
-input[type='color'] {
+input[type="color"] {
   height: 100%;
+  min-width: 6rem;
   background-color: var(--white);
   border-color: var(--white);
 }
@@ -279,9 +319,13 @@ input[type='color'] {
   border-radius: 0;
   border-top-right-radius: var(--borderRadius);
   border-bottom-right-radius: var(--borderRadius);
-  letter-spacing: 3px;
   transition-duration: 0s;
 }
+
+.btn {
+  min-width: 8rem;
+}
+
 @media screen and (min-width: 768px) {
   .container {
     grid-template-columns: auto 1fr;
@@ -305,13 +349,17 @@ input[type='color'] {
   font-size: 1rem;
 }
 .color p {
-  line-height: 1.5;
+  line-height: 2;
   margin-bottom: 0.25rem;
 }
 
+.color-value {
+  font-weight: bolder;
+}
+
 .color-light .color-value {
-  color: var(--white);
+  color: var(--grey-100);
 }
 .color-light .percent-value {
-  color: var(--white);
+  color: var(--grey-100);
 }
