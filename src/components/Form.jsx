@@ -10,7 +10,7 @@ const Form = ({ addColor }) => {
   };
 
   return (
-    <section className="container">
+    <section>
       <form className="color-form" onSubmit={handleSubmit}>
         <input
           type="color"

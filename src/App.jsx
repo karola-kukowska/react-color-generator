@@ -18,8 +18,10 @@ const App = () => {
   return (
     <main>
       <ToastContainer position="top-center" />
-      <h2 className="color-title">Color Generator</h2>
-      <Form addColor={addColor} />
+      <div className="container">
+        <h2 className="color-title">Color Generator</h2>
+        <Form addColor={addColor} />
+      </div>
       <ColorList colors={colorList} />
     </main>
   );
